@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="ChangeButton" Grid.Column="5" Content="Изменить запись" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Height="23" Width="113" Margin="0,10,0,0" Click="ChangeButton_Click"/>
+        <Button x:Name="DelButton" Grid.Column="5" Content="Удалить запись" HorizontalAlignment="Center" Margin="0,39,0,0" Grid.Row="5" VerticalAlignment="Top" Height="23" Width="113" Click="DelButton_Click"/>
+        <Button x:Name="AddButton" Grid.Column="5" Content="Добавить запись" HorizontalAlignment="Center" Margin="0,37,0,0" Grid.Row="4" VerticalAlignment="Top" Height="23" Width="113" Click="AddButton_Click"/>
+        <Label Grid.Column="5" Content="Тип записи" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Width="133"/>
+        <Label Grid.Column="5" Content="Имя записи" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" Width="113" Margin="0,11,0,0"/>
+        <Button x:Name="AddType" Grid.Column="4" Content="Добавить тип" HorizontalAlignment="Center" Margin="0,37,0,0" Grid.Row="2" VerticalAlignment="Top" Height="23" Width="113" Click="AddType_Click"/>
+
+        <ComboBox x:Name="RecordType" HorizontalAlignment="Center" Margin="0,36,0,0" Grid.Row="2" VerticalAlignment="Top" Width="133" Height="36" Grid.Column="5"/>
+        <Label Grid.Column="5" Content="Сумма денег" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Width="133" Margin="0,72,0,0" Height="37" Grid.RowSpan="2"/>
+        <Label x:Name="CountOfFull" Grid.Column="2" Content="Итог: 0" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Width="133" Margin="0,15,0,0" Height="37"/>
+        <DatePicker x:Name="DatePicker" HorizontalAlignment="Center" VerticalAlignment="Center" Width="755" Grid.ColumnSpan="6" Grid.Column="0" Height="30" SelectedDateChanged="DatePicker_SelectedDateChanged"/>
+        <TextBox x:Name="NameField" Grid.Column="5" HorizontalAlignment="Center" Margin="0,37,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133"/>
+        <TextBox x:Name="AmountField" Grid.Column="5" HorizontalAlignment="Center" Margin="0,37,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133"/>
+        <DataGrid x:Name="DataGrid" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="4" Grid.RowSpan="4" SelectionChanged="DataGrid_SelectionChanged"/>
+
+    </Grid>
+</Window>
